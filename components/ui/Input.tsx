@@ -18,11 +18,18 @@ export const Input = ({
     <div className="relative flex">
       <input
         id="input-todo"
-        className="p-2 outline-black text-base border  h-12 border-black rounded-md w-full"
+        className="pl-2 md:pl-10 p-2 outline-black text-base border  h-12 border-black rounded-md w-full"
         alt="input enter"
         value={value}
         onChange={changeInputAction}
         placeholder="Add new task"
+      />
+      <Image
+        className="hidden md:block absolute transform translate-y-[-50%] top-1/2 left-2 "
+        src="/icon-add.svg"
+        alt="icon-add"
+        width="22"
+        height="22"
       />
       <button onClick={addTodoAction}>
         <span>
