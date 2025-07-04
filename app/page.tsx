@@ -3,6 +3,7 @@
 import { Input } from '@/components/ui/Input';
 import { ChangeEvent, useState } from 'react';
 import Checkbox from '@/components/ui/checkbox';
+import IconButton from '@/components/ui/icon-button';
 
 export default function Home() {
   const [input, setInput] = useState<string>('');
@@ -45,6 +46,7 @@ export default function Home() {
       </ul>
 
       <Checkbox checked={checked} changeCompleted={changeCompleted} />
+      <IconButton iconPath={'edit.svg'} alt={'edit'} onClick={() => {}} />
     </>
   );
 }
