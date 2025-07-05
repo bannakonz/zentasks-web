@@ -1,25 +1,26 @@
 import Checkbox from '@/components/ui/checkbox';
 import IconButton from '@/components/ui/icon-button';
+
 interface TodoItemProps {
   id: number;
   title: string;
-  checked: boolean;
+  isCompleted: boolean;
   onDelete: () => void;
-  onTickComplete: () => void;
+  onToggleCompletion: () => void;
 }
 
 const TodoItem = ({
   id,
   title,
-  checked = false,
+  isCompleted = false,
   onDelete,
-  onTickComplete,
+  onToggleCompletion,
 }: TodoItemProps) => {
   return (
-    <div key={id} className="flex justify-between">
+    <div key={id} className='flex justify-between'>
       <Checkbox
-        checked={checked}
-        changeCompleted={onTickComplete}
+        checked={isCompleted}
+        changeCompleted={onToggleCompletion}
         label={title || ''}
       />
       <IconButton iconPath={'/more.svg'} alt={'more'} onClick={onDelete} />

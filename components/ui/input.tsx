@@ -9,9 +9,9 @@ interface InputProps {
 const Input = ({ value, onChange, placeHolder = '' }: InputProps) => {
   return (
     <input
-      id="input-todo"
-      className="px-1 outline-black text-base border  h-12 border-black rounded-md w-full"
-      alt="input"
+      id='input-todo'
+      className='px-1 outline-black text-base border  h-12 border-black rounded-md w-full'
+      alt='input'
       value={value}
       onChange={onChange}
       placeholder={placeHolder}
