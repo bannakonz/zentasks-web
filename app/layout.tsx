@@ -4,6 +4,8 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import React from 'react';
 
+import Navbar from '@/components/navbar/navbar';
+
 const interSans = Inter({
   variable: '--font-inter',
   subsets: ['latin'],
@@ -21,8 +23,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={`${interSans.variable} antialiased px-6`}>
-        {children}
+      <body className={`${interSans.variable} antialiased`}>
+        <Navbar />
+        <main className={'py-8 px-6 pt-14'}>{children} </main>
       </body>
     </html>
   );
