@@ -5,11 +5,15 @@ import { ChangeEvent } from 'react';
 
 interface InputProps {
   addTodoAction: () => void;
-  changeInputAction: (event: ChangeEvent<HTMLInputElement>) => void;
+  handleChangeInputAction: (event: ChangeEvent<HTMLInputElement>) => void;
   value: string;
 }
 
-const IconInput = ({ addTodoAction, changeInputAction, value }: InputProps) => {
+const IconInput = ({
+  addTodoAction,
+  handleChangeInputAction,
+  value,
+}: InputProps) => {
   return (
     <div className="relative flex">
       <input
@@ -17,7 +21,7 @@ const IconInput = ({ addTodoAction, changeInputAction, value }: InputProps) => {
         className="pl-2 md:pl-10 p-2 outline-black text-base border  h-12 border-black rounded-md w-full"
         alt="input enter"
         value={value}
-        onChange={changeInputAction}
+        onChange={handleChangeInputAction}
         placeholder="Add new task"
       />
       <Image
