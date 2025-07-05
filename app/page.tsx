@@ -2,7 +2,7 @@
 
 import { ChangeEvent, useEffect, useState } from 'react';
 
-import TodoForm from '@/components/todo/to-to-form/todo-form';
+import TodoForm from '@/components/todo/todo-form/todo-form';
 import TodoList from '@/components/todo/todo-list/todo-list';
 import Divider from '@/components/ui/divider';
 import { Todo } from '@/type/todo';
@@ -73,25 +73,34 @@ export default function TodoApp() {
   }, []);
 
   return (
-    <>
-      <h2 className='text-5xl  font-boldtext-black '>Tasks </h2>
-      <p className='text-xl font-medium text-gray-700'>
-        What’s on your mind today ?
-      </p>
+    <div className='max-w-4xl mx-auto'>
+      <div className='text-center mb-12'>
+        <h1 className='text-4xl font-bold text-gray-900 mb-4'>
+          Start Your Day Right
+        </h1>
+        <p className='text-xl text-gray-600'>Simple, focused task management</p>
+      </div>
+
       <TodoForm
         input={inputValue}
         onInputChange={handleInputChange}
         onAddTodo={addTodo}
       />
-      <TodoList
-        todos={todos}
-        onDelete={deleteTodo}
-        onToggleCompletion={toggleTodoCompletion}
-      />
+
+      <div className='mb-8'>
+        <h2 className='text-2xl font-semibold text-gray-900 mb-6'>Task</h2>
+        <TodoList
+          todos={todos}
+          onDelete={deleteTodo}
+          onToggleCompletion={toggleTodoCompletion}
+        />
+      </div>
+
       <Divider />
-      <p className='font-light text-base text-center'>
-        {(todos && todos.length) || 0} tasks remain
+
+      <p className='text-center text-gray-600'>
+        {todos.filter(todo => !todo.completed).length} tasks remain
       </p>
-    </>
+    </div>
   );
 }

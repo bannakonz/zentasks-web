@@ -4,9 +4,9 @@ import Image from 'next/image';
 import { ChangeEvent } from 'react';
 
 interface InputProps {
+  value: string;
   addTodoAction: () => void;
   handleChangeInputAction: (event: ChangeEvent<HTMLInputElement>) => void;
-  value: string;
 }
 
 const IconInput = ({
