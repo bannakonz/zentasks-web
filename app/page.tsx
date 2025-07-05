@@ -1,13 +1,16 @@
 'use client';
 
-import { Input } from '@/components/ui/Input';
 import { ChangeEvent, useState } from 'react';
 import Checkbox from '@/components/ui/checkbox';
+import Button from '@/components/ui/button';
 import IconButton from '@/components/ui/icon-button';
+import IconInput from '@/components/ui/icon-input';
+import Input from '@/components/ui/input';
 
 export default function Home() {
   const [input, setInput] = useState<string>('');
   const [checked, setChecked] = useState<boolean>(false);
+  const [value, setValue] = useState<string>('');
 
   const todos = [
     {
@@ -32,9 +35,13 @@ export default function Home() {
     setChecked(e.target.checked);
   };
 
+  const changeValue = (event: ChangeEvent<HTMLInputElement>) => {
+    setValue(event.target.value);
+  };
+
   return (
     <>
-      <Input
+      <IconInput
         addTodoAction={() => {}}
         changeInputAction={changeInputAction}
         value={input}
@@ -46,7 +53,10 @@ export default function Home() {
       </ul>
 
       <Checkbox checked={checked} changeCompleted={changeCompleted} />
-      <IconButton iconPath={'edit.svg'} alt={'edit'} onClick={() => {}} />
+      <IconButton iconPath={'more.svg'} alt={'edit'} onClick={() => {}} />
+      <Button btnName="Delete" onClick={() => {}} variant={'default'} />
+      <Button onClick={() => {}} variant={'outline'} btnName={'Cancel'} />
+      <Input value={value} onChange={changeValue} />
     </>
   );
 }
