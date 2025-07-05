@@ -9,10 +9,11 @@ interface IconButton {
 const IconButton = ({ iconPath, alt, onClick }: IconButton) => {
   return (
     <>
-      <button className="cursor-pointer" onClick={onClick}>
+      <button className='cursor-pointer' onClick={onClick}>
         <Image src={iconPath} alt={alt} width={24} height={24} />
       </button>
     </>
   );
 };
+
 export default IconButton;
