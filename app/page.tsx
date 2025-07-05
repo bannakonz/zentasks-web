@@ -1,62 +1,67 @@
 'use client';
 
-import { ChangeEvent, useState } from 'react';
-import Checkbox from '@/components/ui/checkbox';
-import Button from '@/components/ui/button';
-import IconButton from '@/components/ui/icon-button';
 import IconInput from '@/components/ui/icon-input';
-import Input from '@/components/ui/input';
+import { ChangeEvent, useState } from 'react';
+import Image from 'next/image';
+import Divider from '@/components/ui/divider';
+import Checkbox from '@/components/ui/checkbox';
+import IconButton from '@/components/ui/icon-button';
 
 export default function Home() {
   const [input, setInput] = useState<string>('');
-  const [checked, setChecked] = useState<boolean>(false);
-  const [value, setValue] = useState<string>('');
-
-  const todos = [
-    {
-      id: 1,
-      title: 'title 1',
-      completed: false,
-    },
-    {
-      id: 2,
-      title: 'title 2',
-      completed: false,
-    },
-  ];
-
-  const changeInputAction = (event: ChangeEvent<HTMLInputElement>) => {
-    if (event.target.value.trim() !== null || event.target.value !== '') {
-      setInput(event.target.value);
-    }
+  const handleChangeInput = (event: ChangeEvent<HTMLInputElement>) => {
+    setInput(event.target.value);
   };
-
-  const changeCompleted = (e: ChangeEvent<HTMLInputElement>) => {
-    setChecked(e.target.checked);
-  };
-
-  const changeValue = (event: ChangeEvent<HTMLInputElement>) => {
-    setValue(event.target.value);
-  };
-
+  const addTodo = () => {};
   return (
     <>
+      <h2 className="text-5xl  font-boldtext-black ">Tasks </h2>
+      <p className="text-xl font-medium text-gray-700">
+        What’s on your mind today ?
+      </p>
       <IconInput
-        addTodoAction={() => {}}
-        changeInputAction={changeInputAction}
         value={input}
+        handleChangeInputAction={handleChangeInput}
+        addTodoAction={addTodo}
       />
-      <ul>
-        {todos?.map((item) => {
-          return <li key={item.id}>{item.title}</li>;
-        })}
-      </ul>
-
-      <Checkbox checked={checked} changeCompleted={changeCompleted} />
-      <IconButton iconPath={'more.svg'} alt={'edit'} onClick={() => {}} />
-      <Button btnName="Delete" onClick={() => {}} variant={'default'} />
-      <Button onClick={() => {}} variant={'outline'} btnName={'Cancel'} />
-      <Input value={value} onChange={changeValue} />
+      {/*<div className="flex justify-center items-center h-96 flex-col">*/}
+      {/*  <Image src={'fi-edit.svg'} alt={'edit'} width={90} height={90} />*/}
+      {/*  <p>Starting by add you first task</p>*/}
+      {/*</div>*/}
+      <div className="flex justify-between">
+        <Checkbox
+          checked={false}
+          changeCompleted={() => {}}
+          label="Reading Book"
+        />
+        <IconButton iconPath={'/more.svg'} alt={'more'} onClick={() => {}} />
+      </div>
+      <div className="flex justify-between">
+        <Checkbox
+          checked={false}
+          changeCompleted={() => {}}
+          label="Reading Book"
+        />
+        <IconButton iconPath={'/more.svg'} alt={'more'} onClick={() => {}} />
+      </div>
+      <div className="flex justify-between">
+        <Checkbox
+          checked={false}
+          changeCompleted={() => {}}
+          label="Reading Book"
+        />
+        <IconButton iconPath={'/more.svg'} alt={'more'} onClick={() => {}} />
+      </div>
+      <div className="flex justify-between">
+        <Checkbox
+          checked={false}
+          changeCompleted={() => {}}
+          label="Reading Book"
+        />
+        <IconButton iconPath={'/more.svg'} alt={'more'} onClick={() => {}} />
+      </div>
+      <Divider />
+      <p className="font-light text-base text-center">0 tasks remain</p>
     </>
   );
 }
