@@ -5,14 +5,21 @@ interface TodoItemProps {
   title: string;
   checked: boolean;
   onDelete: () => void;
+  onTickComplete: () => void;
 }
 
-const TodoItem = ({ id, title, checked = false, onDelete }: TodoItemProps) => {
+const TodoItem = ({
+  id,
+  title,
+  checked = false,
+  onDelete,
+  onTickComplete,
+}: TodoItemProps) => {
   return (
     <div key={id} className="flex justify-between">
       <Checkbox
         checked={checked}
-        changeCompleted={() => {}}
+        changeCompleted={onTickComplete}
         label={title || ''}
       />
       <IconButton iconPath={'/more.svg'} alt={'more'} onClick={onDelete} />
