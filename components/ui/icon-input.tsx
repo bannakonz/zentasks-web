@@ -43,7 +43,7 @@ const IconInput = ({
         </span>
       </button>
       <button
-        onClick={() => addTodoAction}
+        onClick={addTodoAction}
         className="hidden md:flex absolute transform translate-y-[-50%] top-1/2 right-2 justify-center items-center p-2 rounded-md border-black border w-16 h-8"
       >
         Add
