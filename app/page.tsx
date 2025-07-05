@@ -34,6 +34,16 @@ export default function Home() {
     setTodos((prevState) => prevState.filter((todoItem) => todoItem.id !== id));
   };
 
+  const onCompleted = (id: number) => {
+    setTodos((prevState) =>
+      prevState.map((todoItem) =>
+        todoItem.id === id
+          ? { ...todoItem, completed: !todoItem.completed }
+          : todoItem,
+      ),
+    );
+  };
+
   useEffect(() => {
     setTodos([
       {
@@ -85,6 +95,7 @@ export default function Home() {
                 title={item.title}
                 checked={item.completed}
                 onDelete={() => removeTodo(item.id)}
+                onTickComplete={() => onCompleted(item.id)}
               />
             );
           })}
