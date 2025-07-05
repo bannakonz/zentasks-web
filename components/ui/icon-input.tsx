@@ -9,11 +9,7 @@ interface InputProps {
   value: string;
 }
 
-export const Input = ({
-  addTodoAction,
-  changeInputAction,
-  value,
-}: InputProps) => {
+const IconInput = ({ addTodoAction, changeInputAction, value }: InputProps) => {
   return (
     <div className="relative flex">
       <input
@@ -51,3 +47,5 @@ export const Input = ({
     </div>
   );
 };
+
+export default IconInput;
