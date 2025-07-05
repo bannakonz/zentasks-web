@@ -1,4 +1,4 @@
-import { ChangeEvent, KeyboardEvent as ReactKeyboardEvent } from 'react';
+import { ChangeEvent } from 'react';
 
 import IconInput from '@/components/ui/icon-input';
 
