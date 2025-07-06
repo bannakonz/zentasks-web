@@ -22,7 +22,7 @@ const IconInput = ({
         alt='input enter'
         value={value}
         onChange={handleChangeInputAction}
-        placeholder='Add new task'
+        placeholder='Add new task...'
       />
       <Image
         className='hidden md:block absolute transform translate-y-[-50%] top-1/2 left-2 '
@@ -44,7 +44,7 @@ const IconInput = ({
       </button>
       <button
         onClick={addTodoAction}
-        className='hidden md:flex absolute transform translate-y-[-50%] top-1/2 right-2 justify-center items-center p-2 rounded-md border-black border w-16 h-8'
+        className='hidden md:flex cursor-pointer absolute transform translate-y-[-50%] top-1/2 right-2 justify-center items-center p-2 rounded-md border-black border w-16 h-8'
       >
         Add
       </button>

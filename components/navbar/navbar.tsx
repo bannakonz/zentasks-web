@@ -48,7 +48,7 @@ const Navbar = ({
           ) : (
             <button
               onClick={onSignIn}
-              className='px-3 py-1 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-50 transition-colors duration-200'
+              className='px-3 py-1 border cursor-pointer border-gray-300 rounded-md text-gray-700 hover:bg-gray-50 transition-colors duration-200'
             >
               Sign in
             </button>

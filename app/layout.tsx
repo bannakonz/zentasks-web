@@ -25,7 +25,7 @@ export default function RootLayout({
     <html lang='en'>
       <body className={`${interSans.variable} antialiased`}>
         <Navbar />
-        <main className={'py-8 px-6 pt-14'}>{children} </main>
+        <main className={'py-8 px-6 pt-12'}>{children} </main>
       </body>
     </html>
   );
