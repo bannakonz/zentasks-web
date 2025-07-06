@@ -12,7 +12,7 @@ interface TodoListProps {
 const TodoList = ({ todos, onDelete, onToggleCompletion }: TodoListProps) => {
   if (todos.length === 0) {
     return (
-      <div className='flex justify-center items-center h-96 flex-col'>
+      <div className='flex justify-center items-center h-80 flex-col'>
         <Image src={'fi-edit.svg'} alt={'edit'} width={90} height={90} />
         <p>Starting by add you first task</p>
       </div>
