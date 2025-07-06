@@ -76,7 +76,7 @@ const IconInput = ({
       </button>
       <button
         onClick={addTodoAction}
-        className='hidden md:flex cursor-pointer absolute transform translate-y-[-50%] top-1/2 right-2 justify-center items-center p-2 rounded-md border-black border w-16 h-8'
+        className='hidden md:flex cursor-pointer absolute transform translate-y-[-50%] top-1/2 right-2 justify-center items-center p-2 rounded-md border-gray-300 text-gray-700 border w-16 h-8 hover:bg-gray-50 transition-colors duration-200'
       >
         Add
       </button>
